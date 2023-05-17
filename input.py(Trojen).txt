@@ -1,8 +1,7 @@
 """
-Custom-written pure go meterpreter/reverse_tcp stager
+Yardıma ihticanın olursa discord sunucumuza beklerim
+Discord:https://discord.gg/6WC8ybb8 
 
-Module built by @b00stfr3ak44
-Updated by @ChrisTruncer
 """
 
 from tools.evasion.evasion_common import evasion_helpers
