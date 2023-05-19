@@ -1,0 +1,28 @@
+```
+Discord:https://discord.gg/6WC8ybb8
+
+```
+
+python-nmap
+
+pip install python-nmap
+
+import nmap
+
+def nmap_scan(target):
+    nm = nmap.PortScanner()
+    nm.scan(target, arguments='-sV')  # Tarama seçenekleri ve argümanları burada belirlenir
+
+    for host in nm.all_hosts():
+        print('Host : %s (%s)' % (host, nm[host].hostname()))
+        for proto in nm[host].all_protocols():
+            print('Protocol : %s' % proto)
+
+            ports = nm[host][proto].keys()
+            for port in ports:
+                print('Port : %s\tState : %s' % (port, nm[host][proto][port]['state']))
+
+target = input("kurban ip: ")
+nmap_scan(target)
+
+Bu örnek, basit bir port taraması yaparak hedef IP adresindeki açık portları ve ilgili durumlarını gösterir. '-sV' argümanı servis tespiti için kullanılır.
